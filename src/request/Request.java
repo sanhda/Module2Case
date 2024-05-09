@@ -1,5 +1,6 @@
 package request;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class  Request {
@@ -17,6 +18,11 @@ public abstract class  Request {
         if (parts.length >= 2) {
             this.action = parts[0];
             this.keyword = parts[parts.length-1];
+        }
+
+        if (parts.length == 3) {
+            this.params = new ArrayList<>();
+            this.params.add(parts[1]);
         }
     }
 

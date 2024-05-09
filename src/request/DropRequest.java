@@ -13,7 +13,8 @@ public class DropRequest extends Request {
 
     @Override
     public void processRequest() {
-        System.out.println(this.getAction() + this.getKeyword());
+        DictionaryFileManager fileManager = DictionaryFileManager.getInstance();
+        fileManager.dropFile(this.getKeyword());
     }
 
     @Override

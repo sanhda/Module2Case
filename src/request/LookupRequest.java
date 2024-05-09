@@ -14,7 +14,8 @@ public class LookupRequest extends Request {
 
     @Override
     public void processRequest() {
-        System.out.println(this.getAction() + this.getKeyword());
+        DictionaryFileManager fileManager = DictionaryFileManager.getInstance();
+        fileManager.showWord(this.getKeyword());
     }
 
     @Override
